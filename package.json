@@ -4,20 +4,24 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "lint": "tslint -p \".\" -t stylish"
   },
   "dependencies": {
-    "react": "16.3.1",
-    "react-native": "0.55.4"
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-navigation": "^2.6.2"
   },
   "devDependencies": {
     "@types/react": "^16.4.6",
     "@types/react-native": "^0.55.26",
+    "@types/react-navigation": "^2.0.11",
     "babel-jest": "23.2.0",
-    "babel-preset-react-native": "4.0.0",
+    "babel-preset-react-native": "5.0.0",
     "jest": "23.2.0",
     "react-native-typescript-transformer": "^1.2.10",
     "react-test-renderer": "16.3.1",
+    "tslint": "^5.10.0",
     "typescript": "^2.9.2"
   },
   "jest": {
