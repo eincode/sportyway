@@ -1,9 +1,28 @@
-import { createStackNavigator } from 'react-navigation';
+import React from 'react'
+import { createStackNavigator } from 'react-navigation'
+import Home from './components/screens/Home'
+import metrics from './config/metrics'
 
-import Hello from './components/Hello'
+export default class App extends React.Component<any, any> {
 
-export default createStackNavigator ({
-  Home: {
-    screen: Hello
+  render() {
+    return(
+      <Navigator />
+    )
   }
-})
+
+}
+
+const Navigator = createStackNavigator(
+  {
+    Home: { screen: Home }
+  },
+  {
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: metrics.PRIMARY_COLOR
+      },
+      headerTintColor: 'white'
+    }
+  }
+)

@@ -78429,20 +78429,85 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   });
   exports.default = void 0;
 
-  var _reactNavigation = _$$_REQUIRE(_dependencyMap[0], "react-navigation");
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[0], "react"));
 
-  var _Hello = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./components/Hello"));
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNavigation = _$$_REQUIRE(_dependencyMap[2], "react-navigation");
+
+  var _Home = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./components/screens/Home"));
+
+  var _metrics = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./config/metrics"));
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  var _default = (0, _reactNavigation.createStackNavigator)({
-    Home: {
-      screen: _Hello.default
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+  function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+  var _components = {
+    App: {
+      displayName: "App"
     }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/Princhaa/ReactNativeProjects/sportyway/App.tsx",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
   });
 
-  exports.default = _default;
-},507,[508,627],"App.tsx");
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var App = _wrapComponent("App")(function (_React$Component) {
+    _inherits(App, _React$Component);
+
+    function App() {
+      _classCallCheck(this, App);
+
+      return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    }
+
+    _createClass(App, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(Navigator, null);
+      }
+    }]);
+
+    return App;
+  }(_react.default.Component));
+
+  var _default2 = App;
+  exports.default = _default2;
+  var Navigator = (0, _reactNavigation.createStackNavigator)({
+    Home: {
+      screen: _Home.default
+    }
+  }, {
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: _metrics.default.PRIMARY_COLOR
+      },
+      headerTintColor: 'white'
+    }
+  });
+},507,[37,87,508,629,630],"App.tsx");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   module.exports = {
     get createNavigationContainer() {
@@ -96538,7 +96603,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[0], "react"));
 
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./../node_modules/react-transform-hmr/lib/index.js"));
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./../../node_modules/react-transform-hmr/lib/index.js"));
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
 
@@ -96559,13 +96624,13 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
   var _components = {
-    Hello: {
-      displayName: "Hello"
+    Home: {
+      displayName: "Home"
     }
   };
 
   var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/Princhaa/ReactNativeProjects/sportyway/components/Hello.tsx",
+    filename: "/Users/Princhaa/ReactNativeProjects/sportyway/components/screens/Home.tsx",
     components: _components,
     locals: [module],
     imports: [_react.default]
@@ -96577,79 +96642,53 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     };
   }
 
-  var Hello = _wrapComponent("Hello")(function (_React$Component) {
-    _inherits(Hello, _React$Component);
+  var Home = _wrapComponent("Home")(function (_React$Component) {
+    _inherits(Home, _React$Component);
 
-    function Hello(props) {
-      var _this;
+    function Home() {
+      _classCallCheck(this, Home);
 
-      _classCallCheck(this, Hello);
-
-      _this = _possibleConstructorReturn(this, (Hello.__proto__ || Object.getPrototypeOf(Hello)).call(this, props));
-
-      _this.onIncrement = function () {
-        return _this.setState({
-          enthusiasmLevel: _this.state.enthusiasmLevel + 1
-        });
-      };
-
-      _this.onDecrement = function () {
-        return _this.setState({
-          enthusiasmLevel: _this.state.enthusiasmLevel - 1
-        });
-      };
-
-      _this.getExclamationMarks = function (numChars) {
-        return Array(numChars + 1).join('!');
-      };
-
-      _this.state = {
-        enthusiasmLevel: props.enthusiasmLevel || 1
-      };
-      return _this;
+      return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
     }
 
-    _createClass(Hello, [{
+    _createClass(Home, [{
       key: "render",
       value: function render() {
         return _react.default.createElement(_reactNative.View, {
-          style: styles.root
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.greeting
-        }, "Hello ", this.props.name + this.getExclamationMarks(this.state.enthusiasmLevel)), _react.default.createElement(_reactNative.View, {
-          style: styles.buttons
-        }, _react.default.createElement(_reactNative.Text, null, "Lala")));
+          style: styles.container
+        }, _react.default.createElement(_reactNative.StatusBar, {
+          barStyle: 'light-content'
+        }), _react.default.createElement(_reactNative.Text, null, "Home Screen"));
       }
     }]);
 
-    return Hello;
+    return Home;
   }(_react.default.Component));
 
-  var _default2 = Hello;
+  var _default2 = Home;
   exports.default = _default2;
+  Home.navigationOptions = {
+    title: 'Sportyway'
+  };
 
   var styles = _reactNative.StyleSheet.create({
-    root: {
-      alignItems: 'center',
-      alignSelf: 'center'
-    },
-    buttons: {
-      flexDirection: 'row',
-      minHeight: 70,
-      alignItems: 'stretch',
-      alignSelf: 'center',
-      borderWidth: 5
-    },
-    button: {
+    container: {
       flex: 1,
-      paddingVertical: 0
-    },
-    greeting: {
-      color: '#999',
-      fontWeight: 'bold'
+      alignItems: 'center',
+      justifyContent: 'center'
     }
   });
-},627,[37,87,1],"Hello.tsx");
+},629,[37,87,1],"Home.tsx");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+  var _default = {
+    PRIMARY_COLOR: '#FFBA00'
+  };
+  exports.default = _default;
+},630,[],"metrics.ts");
 require(263);
 require(0);
 //# sourceMappingURL=index.map
