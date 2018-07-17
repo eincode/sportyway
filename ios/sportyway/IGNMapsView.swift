@@ -14,22 +14,39 @@ class IGNMapsViewManager: RCTViewManager {
   override func view() -> UIView! {
     return IGNMapsView()
   }
+  
+  func addMarker() {
+    
+  }
 }
 
 
 class IGNMapsView: UIView {
-
-  var mapView: GMSMapView?
+ 
+  var mapView: GMSMapView = {
+    let view = GMSMapView(frame: .zero)
+    view.camera = GMSCameraPosition.camera(withLatitude: 51.050657, longitude: 10.649514, zoom: 5.5)
+    view.translatesAutoresizingMaskIntoConstraints = false
+    
+    return view
+  }()
+  
+  var onNgapain: RCTDirectEventBlock?
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    mapView = GMSMapView.map(withFrame: CGRect(x: 100, y: 100, width: 200, height: 200), camera: GMSCameraPosition.camera(withLatitude: 51.050657, longitude: 10.649514, zoom: 5.5))
     self.frame = self.bounds
-    self.addSubview(mapView!)
+    self.addSubview(mapView)
+    
+    NSLayoutConstraint.activate([
+        mapView.leftAnchor.constraint(equalTo: self.leftAnchor),
+        mapView.rightAnchor.constraint(equalTo: self.rightAnchor),
+        mapView.topAnchor.constraint(equalTo: self.topAnchor),
+        mapView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+    ])
   }
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-
 }

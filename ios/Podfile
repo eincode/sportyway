@@ -1,0 +1,33 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'sportyway' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for sportyway
+
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
+  target 'sportyway-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'sportywayTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'sportyway-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for sportyway-tvOS
+
+end

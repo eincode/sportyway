@@ -78513,7 +78513,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
       headerTintColor: 'white'
     }
   });
-},507,[37,87,508,627,628],"App.tsx");
+},507,[37,87,508,627,629],"App.tsx");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   module.exports = {
     get createNavigationContainer() {
@@ -96688,7 +96688,12 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
       flex: 1
     }
   });
-},627,[37,87,1,629],"Home.tsx");
+},627,[37,87,1,628],"Home.tsx");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  module.exports = (0, _reactNative.requireNativeComponent)('IGNMapsView', undefined);
+},628,[1],"MapView.ts");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -96698,12 +96703,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     PRIMARY_COLOR: '#FFBA00'
   };
   exports.default = _default;
-},628,[],"metrics.ts");
-__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-
-  module.exports = (0, _reactNative.requireNativeComponent)('RNTMap', undefined);
-},629,[1],"MapView.ts");
+},629,[],"metrics.ts");
 require(263);
 require(0);
 //# sourceMappingURL=index.map
