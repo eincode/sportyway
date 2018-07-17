@@ -78495,19 +78495,25 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _default2 = App;
   exports.default = _default2;
-  var Navigator = (0, _reactNavigation.createStackNavigator)({
+  var TabBar = (0, _reactNavigation.createBottomTabNavigator)({
     Home: {
       screen: _Home.default
     }
+  });
+  var Navigator = (0, _reactNavigation.createStackNavigator)({
+    Tab: {
+      screen: TabBar
+    }
   }, {
     navigationOptions: {
+      title: 'Sportyway',
       headerStyle: {
         backgroundColor: _metrics.default.PRIMARY_COLOR
       },
       headerTintColor: 'white'
     }
   });
-},507,[37,87,508,629,630],"App.tsx");
+},507,[37,87,508,627,628],"App.tsx");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   module.exports = {
     get createNavigationContainer() {
@@ -96642,6 +96648,8 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     };
   }
 
+  var MapView = _$$_REQUIRE(_dependencyMap[3], '../MapView');
+
   var Home = _wrapComponent("Home")(function (_React$Component) {
     _inherits(Home, _React$Component);
 
@@ -96658,7 +96666,11 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
           style: styles.container
         }, _react.default.createElement(_reactNative.StatusBar, {
           barStyle: 'light-content'
-        }), _react.default.createElement(_reactNative.Text, null, "Home Screen"));
+        }), _react.default.createElement(MapView, {
+          style: {
+            flex: 1
+          }
+        }));
       }
     }]);
 
@@ -96668,17 +96680,15 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   var _default2 = Home;
   exports.default = _default2;
   Home.navigationOptions = {
-    title: 'Sportyway'
+    title: 'Home'
   };
 
   var styles = _reactNative.StyleSheet.create({
     container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center'
+      flex: 1
     }
   });
-},629,[37,87,1],"Home.tsx");
+},627,[37,87,1,629],"Home.tsx");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -96688,7 +96698,12 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     PRIMARY_COLOR: '#FFBA00'
   };
   exports.default = _default;
-},630,[],"metrics.ts");
+},628,[],"metrics.ts");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  module.exports = (0, _reactNative.requireNativeComponent)('RNTMap', undefined);
+},629,[1],"MapView.ts");
 require(263);
 require(0);
 //# sourceMappingURL=index.map

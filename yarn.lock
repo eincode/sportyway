@@ -806,6 +806,10 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
+"@types/node@^10.5.2":
+  version "10.5.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.2.tgz#f19f05314d5421fe37e74153254201a7bf00a707"
+
 "@types/react-native@*":
   version "0.56.1"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.56.1.tgz#02d80af3ce7c1be2a3e65ab5e1ce09309775edb1"

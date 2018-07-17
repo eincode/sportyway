@@ -1,5 +1,5 @@
 import React from 'react'
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 import Home from './components/screens/Home'
 import metrics from './config/metrics'
 
@@ -13,12 +13,19 @@ export default class App extends React.Component<any, any> {
 
 }
 
-const Navigator = createStackNavigator(
+const TabBar = createBottomTabNavigator(
   {
     Home: { screen: Home }
+  }
+)
+
+const Navigator = createStackNavigator(
+  {
+    Tab: { screen: TabBar }
   },
   {
     navigationOptions: {
+      title: 'Sportyway',
       headerStyle: {
         backgroundColor: metrics.PRIMARY_COLOR
       },
