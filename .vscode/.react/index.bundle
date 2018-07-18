@@ -78437,7 +78437,9 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _Home = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "./components/screens/Home"));
 
-  var _metrics = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./config/metrics"));
+  var _History = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "./components/screens/History"));
+
+  var _metrics = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "./config/metrics"));
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -78498,6 +78500,9 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   var TabBar = (0, _reactNavigation.createBottomTabNavigator)({
     Home: {
       screen: _Home.default
+    },
+    History: {
+      screen: _History.default
     }
   });
   var Navigator = (0, _reactNavigation.createStackNavigator)({
@@ -78513,7 +78518,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
       headerTintColor: 'white'
     }
   });
-},507,[37,87,508,627,629],"App.tsx");
+},507,[37,87,508,627,630,628],"App.tsx");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   module.exports = {
     get createNavigationContainer() {
@@ -96688,22 +96693,238 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
       flex: 1
     }
   });
-},627,[37,87,1,628],"Home.tsx");
-__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
-
-  module.exports = (0, _reactNative.requireNativeComponent)('IGNMapsView', undefined);
-},628,[1],"MapView.ts");
+},627,[37,87,1,629],"Home.tsx");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = void 0;
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  var _Dimensions$get = _reactNative.Dimensions.get('window'),
+      width = _Dimensions$get.width,
+      height = _Dimensions$get.height;
+
   var _default = {
-    PRIMARY_COLOR: '#FFBA00'
+    PRIMARY_COLOR: '#FFBA00',
+    SHADOW_COLOR: 'rgba(184, 184, 184, 0.5)',
+    DEVICE_WIDTH: width,
+    DEVICE_HEIGHT: height
   };
   exports.default = _default;
-},629,[],"metrics.ts");
+},628,[1],"metrics.ts");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  module.exports = (0, _reactNative.requireNativeComponent)('IGNMapsView', undefined);
+},629,[1],"MapView.ts");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[0], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./../../node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _HistoryItem = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "../HistoryItem"));
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+  function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+  var _components = {
+    History: {
+      displayName: "History"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/Princhaa/ReactNativeProjects/sportyway/components/screens/History.tsx",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var History = _wrapComponent("History")(function (_React$Component) {
+    _inherits(History, _React$Component);
+
+    function History() {
+      _classCallCheck(this, History);
+
+      return _possibleConstructorReturn(this, (History.__proto__ || Object.getPrototypeOf(History)).apply(this, arguments));
+    }
+
+    _createClass(History, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.View, {
+          style: styles.container
+        }, _react.default.createElement(_HistoryItem.default, {
+          name: 'Futsal Bareng',
+          address: 'Jl. Kenangan Terindah No. 1',
+          date: '6 Mei 2018'
+        }));
+      }
+    }]);
+
+    return History;
+  }(_react.default.Component));
+
+  var _default2 = History;
+  exports.default = _default2;
+  History.navigationOptions = {
+    title: 'History'
+  };
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
+    }
+  });
+},630,[37,87,1,631],"History.tsx");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[0], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./../node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _metrics = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "../config/metrics"));
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+  function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+  var _components = {
+    HistoryItem: {
+      displayName: "HistoryItem"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/Princhaa/ReactNativeProjects/sportyway/components/HistoryItem.tsx",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var HistoryItem = _wrapComponent("HistoryItem")(function (_React$Component) {
+    _inherits(HistoryItem, _React$Component);
+
+    function HistoryItem() {
+      _classCallCheck(this, HistoryItem);
+
+      return _possibleConstructorReturn(this, (HistoryItem.__proto__ || Object.getPrototypeOf(HistoryItem)).apply(this, arguments));
+    }
+
+    _createClass(HistoryItem, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.View, {
+          style: styles.container
+        }, _react.default.createElement(_reactNative.View, {
+          style: styles.photoContainer
+        }, _react.default.createElement(_reactNative.View, {
+          style: styles.photo
+        })), _react.default.createElement(_reactNative.View, {
+          style: styles.contentContainer
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.contentItem
+        }, this.props.name), _react.default.createElement(_reactNative.Text, {
+          style: styles.contentItem
+        }, this.props.address), _react.default.createElement(_reactNative.Text, {
+          style: styles.contentItem
+        }, this.props.date)));
+      }
+    }]);
+
+    return HistoryItem;
+  }(_react.default.Component));
+
+  var _default2 = HistoryItem;
+  exports.default = _default2;
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      padding: 20,
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: 'white',
+      width: _metrics.default.DEVICE_WIDTH * 0.95,
+      shadowColor: _metrics.default.SHADOW_COLOR,
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowRadius: 5,
+      shadowOpacity: 1,
+      elevation: 5
+    },
+    photo: {
+      width: 50,
+      height: 50,
+      borderRadius: 25,
+      backgroundColor: 'grey'
+    },
+    photoContainer: {
+      flex: 1.25
+    },
+    contentContainer: {
+      flex: 4
+    },
+    contentItem: {
+      marginVertical: 2
+    }
+  });
+},631,[37,87,1,628],"HistoryItem.tsx");
 require(263);
 require(0);
 //# sourceMappingURL=index.map

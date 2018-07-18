@@ -1,6 +1,10 @@
 import React from 'react'
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
+
+// Tab navigator screens
 import Home from './components/screens/Home'
+import History from './components/screens/History'
+
 import metrics from './config/metrics'
 
 export default class App extends React.Component<any, any> {
@@ -15,7 +19,8 @@ export default class App extends React.Component<any, any> {
 
 const TabBar = createBottomTabNavigator(
   {
-    Home: { screen: Home }
+    Home: { screen: Home },
+    History: { screen: History }
   }
 )
 
