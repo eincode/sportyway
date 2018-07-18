@@ -78518,7 +78518,11 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
       headerTintColor: 'white'
     }
   });
+<<<<<<< HEAD
 },507,[37,87,508,627,630,628],"App.tsx");
+=======
+},507,[37,87,508,627,628],"App.tsx");
+>>>>>>> master
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   module.exports = {
     get createNavigationContainer() {
@@ -96618,6 +96622,8 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
 
+  var _metrics = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "../../config/metrics"));
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -96653,7 +96659,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     };
   }
 
-  var MapView = _$$_REQUIRE(_dependencyMap[3], '../MapView');
+  var MapView = _$$_REQUIRE(_dependencyMap[4], '../MapView');
 
   var Home = _wrapComponent("Home")(function (_React$Component) {
     _inherits(Home, _React$Component);
@@ -96675,7 +96681,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
           style: {
             flex: 1
           }
-        }));
+        }), _react.default.createElement(FloatingActionButton, null));
       }
     }]);
 
@@ -96688,11 +96694,42 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     title: 'Home'
   };
 
+  var FloatingActionButton = function FloatingActionButton() {
+    return _react.default.createElement(_reactNative.TouchableOpacity, {
+      style: styles.fab
+    }, _react.default.createElement(_reactNative.Text, {
+      style: {
+        fontSize: 20,
+        color: 'white'
+      }
+    }, "+"));
+  };
+
   var styles = _reactNative.StyleSheet.create({
     container: {
       flex: 1
+    },
+    fab: {
+      position: 'absolute',
+      bottom: 10,
+      right: 10,
+      width: 50,
+      height: 50,
+      borderRadius: 25,
+      backgroundColor: _metrics.default.PRIMARY_COLOR,
+      justifyContent: 'center',
+      alignItems: 'center',
+      shadowColor: _metrics.default.SHADOW_COLOR,
+      shadowOffset: {
+        width: 0,
+        height: 2
+      },
+      shadowRadius: 5,
+      shadowOpacity: 1,
+      elevation: 5
     }
   });
+<<<<<<< HEAD
 },627,[37,87,1,629],"Home.tsx");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
@@ -96719,11 +96756,15 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   module.exports = (0, _reactNative.requireNativeComponent)('IGNMapsView', undefined);
 },629,[1],"MapView.ts");
+=======
+},627,[37,87,1,628,629],"Home.tsx");
+>>>>>>> master
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
   exports.default = void 0;
+<<<<<<< HEAD
 
   var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[0], "react"));
 
@@ -96925,6 +96966,19 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     }
   });
 },631,[37,87,1,628],"HistoryItem.tsx");
+=======
+  var _default = {
+    PRIMARY_COLOR: '#FFBA00',
+    SHADOW_COLOR: 'rgba(184, 184, 184, 0.5)'
+  };
+  exports.default = _default;
+},628,[],"metrics.ts");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  module.exports = (0, _reactNative.requireNativeComponent)('IGNMapsView', undefined);
+},629,[1],"MapView.ts");
+>>>>>>> master
 require(263);
 require(0);
 //# sourceMappingURL=index.map
