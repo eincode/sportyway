@@ -15,8 +15,8 @@ class IGNMapsViewManager: RCTViewManager {
     return IGNMapsView()
   }
   
-  func addMarker() {
-    
+  func requiresMainQueueSetup() -> Bool {
+    return true
   }
 }
 
@@ -30,8 +30,6 @@ class IGNMapsView: UIView {
     
     return view
   }()
-  
-  var onNgapain: RCTDirectEventBlock?
   
   override init(frame: CGRect) {
     super.init(frame: frame)
