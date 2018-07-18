@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 5,
     shadowOpacity: 1,
-    elevation: 5
+    elevation: 5,
+    marginVertical: 5,
   },
 
   photo: {

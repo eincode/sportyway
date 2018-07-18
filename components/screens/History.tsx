@@ -22,6 +22,8 @@ export default class History extends React.Component<Props, State> {
     return(
       <View style={styles.container}>
         <HistoryItem name={'Futsal Bareng'} address={'Jl. Kenangan Terindah No. 1'} date={'6 Mei 2018'}/>
+        <HistoryItem name={'Futsal Bareng'} address={'Jl. Kenangan Terindah No. 1'} date={'6 Mei 2018'}/>
+        <HistoryItem name={'Futsal Bareng'} address={'Jl. Kenangan Terindah No. 1'} date={'6 Mei 2018'}/>
       </View>
     )
   }
@@ -31,7 +33,6 @@ export default class History extends React.Component<Props, State> {
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    justifyContent: 'center',
     alignItems: 'center',
   }
 })
