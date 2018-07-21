@@ -1,7 +1,10 @@
 import React from 'react'
-import { View, StyleSheet, StatusBar, TouchableOpacity, Text } from 'react-native'
-import { NavigationScreenProp, NavigationStackScreenOptions } from 'react-navigation'
+import { View, StyleSheet, StatusBar, TouchableOpacity, Text, Image } from 'react-native'
+import { NavigationScreenProp, NavigationTabScreenOptions } from 'react-navigation'
 import metrics from '../../config/metrics'
+
+const HOME_ICON_ACTIVE = require('../../assets/ic_home_active.png')
+const HOME_ICON_INACTIVE = require('../../assets/ic_home_inactive.png')
 
 const MapView = require('../MapView')
 
@@ -15,8 +18,18 @@ interface State {
 
 export default class Home extends React.Component<Props, State> {
 
-  static navigationOptions: NavigationStackScreenOptions = {
-    title: 'Home'
+  static navigationOptions: NavigationTabScreenOptions = {
+    title: 'Home',
+    tabBarIcon: ({ focused }) => {
+      switch (focused) {
+        case true: return (
+          <Image source={HOME_ICON_ACTIVE}/>
+        )
+        case false: return (
+          <Image source={HOME_ICON_INACTIVE}/>
+        )
+      }
+    }
   }
 
   render() {
@@ -45,7 +58,7 @@ const styles = StyleSheet.create({
   fab: {
     position: 'absolute',
     bottom: 10,
-    right: 10,
+    left: metrics.DEVICE_WIDTH / 2 - 25,
     width: 50,
     height: 50,
     borderRadius: 25,

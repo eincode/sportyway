@@ -1,8 +1,11 @@
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
-import { NavigationScreenProp, NavigationStackScreenOptions } from 'react-navigation'
+import { View, StyleSheet, Image } from 'react-native'
+import { NavigationScreenProp, NavigationTabScreenOptions } from 'react-navigation'
 
 import HistoryItem from '../HistoryItem'
+
+const HISTORY_ICON_ACTIVE = require('../../assets/ic_history_active.png')
+const HISTORY_ICON_INACTIVE = require('../../assets/ic_history_inactive.png')
 
 interface Props {
   navigation: NavigationScreenProp<any, any>
@@ -14,8 +17,18 @@ interface State {
 
 export default class History extends React.Component<Props, State> {
   
-  static navigationOptions: NavigationStackScreenOptions = {
-    title: 'History'
+  static navigationOptions: NavigationTabScreenOptions = {
+    title: 'History',
+    tabBarIcon: ({ focused }) => {
+      switch (focused) {
+        case true: return (
+          <Image source={HISTORY_ICON_ACTIVE}/>
+        )
+        case false: return (
+          <Image source={HISTORY_ICON_INACTIVE}/>
+        )
+      }
+    }
   }
 
   render() {

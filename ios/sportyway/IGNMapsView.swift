@@ -21,7 +21,9 @@ class IGNMapsViewManager: RCTViewManager {
 }
 
 
-class IGNMapsView: UIView {
+class IGNMapsView: UIView, CLLocationManagerDelegate {
+  
+  var locationManager = CLLocationManager()
  
   var mapView: GMSMapView = {
     let view = GMSMapView(frame: .zero)
@@ -35,6 +37,12 @@ class IGNMapsView: UIView {
     super.init(frame: frame)
     self.frame = self.bounds
     self.addSubview(mapView)
+    mapView.isMyLocationEnabled = true
+    mapView.settings.compassButton = true
+    mapView.settings.myLocationButton = true
+    
+    locationManager.delegate = self
+    locationManager.startUpdatingLocation()
     
     NSLayoutConstraint.activate([
         mapView.leftAnchor.constraint(equalTo: self.leftAnchor),
@@ -42,6 +50,13 @@ class IGNMapsView: UIView {
         mapView.topAnchor.constraint(equalTo: self.topAnchor),
         mapView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
     ])
+  }
+  
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    let location = locations.last
+    let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
+    mapView.animate(to: camera)
+    locationManager.stopUpdatingLocation()
   }
   
   required init?(coder aDecoder: NSCoder) {

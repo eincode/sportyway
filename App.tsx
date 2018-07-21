@@ -1,5 +1,5 @@
 import React from 'react'
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
+import { createStackNavigator, createBottomTabNavigator, TabBarBottom } from 'react-navigation'
 
 // Tab navigator screens
 import Home from './components/screens/Home'
@@ -21,6 +21,19 @@ const TabBar = createBottomTabNavigator(
   {
     Home: { screen: Home },
     History: { screen: History }
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: metrics.PRIMARY_COLOR,
+      inactiveTintColor: '#909090',
+      showIcon: true,
+      style: {
+        backgroundColor: 'white'
+      }
+    },
+    tabBarPosition: 'bottom',
+    animationEnabled: false,
+    swipeEnabled: false
   }
 )
 
