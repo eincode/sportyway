@@ -23,10 +23,10 @@ export default class Home extends React.Component<Props, State> {
     tabBarIcon: ({ focused }) => {
       switch (focused) {
         case true: return (
-          <Image source={HOME_ICON_ACTIVE}/>
+          <Image source={HOME_ICON_ACTIVE} style={metrics.TAB_BAR_ICON_STYLE} resizeMode={'contain'}/>
         )
         case false: return (
-          <Image source={HOME_ICON_INACTIVE}/>
+          <Image source={HOME_ICON_INACTIVE} style={metrics.TAB_BAR_ICON_STYLE} resizeMode={'contain'}/>
         )
       }
     }
