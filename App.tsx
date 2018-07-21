@@ -4,6 +4,7 @@ import { createStackNavigator, createBottomTabNavigator, TabBarBottom } from 're
 // Tab navigator screens
 import Home from './components/screens/Home'
 import History from './components/screens/History'
+import Profile from './components/screens/Profile'
 
 import metrics from './config/metrics'
 
@@ -20,7 +21,8 @@ export default class App extends React.Component<any, any> {
 const TabBar = createBottomTabNavigator(
   {
     Home: { screen: Home },
-    History: { screen: History }
+    History: { screen: History },
+    Profile: { screen: Profile }
   },
   {
     tabBarOptions: {
