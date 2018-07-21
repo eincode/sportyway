@@ -1,5 +1,5 @@
 import React from 'react'
-import { createStackNavigator, createBottomTabNavigator, TabBarBottom } from 'react-navigation'
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 
 // Tab navigator screens
 import Home from './components/screens/Home'
