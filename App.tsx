@@ -6,6 +6,9 @@ import Home from './components/screens/Home'
 import History from './components/screens/History'
 import Profile from './components/screens/Profile'
 
+// Stack screens
+import NewEvent from './components/screens/NewEvent'
+
 import metrics from './config/metrics'
 
 export default class App extends React.Component<any, any> {
@@ -41,7 +44,8 @@ const TabBar = createBottomTabNavigator(
 
 const Navigator = createStackNavigator(
   {
-    Tab: { screen: TabBar }
+    Tab: { screen: TabBar },
+    NewEvent: { screen: NewEvent }
   },
   {
     navigationOptions: {

@@ -37,18 +37,28 @@ export default class Home extends React.Component<Props, State> {
       <View style={styles.container}>
         <StatusBar barStyle={'light-content'}/>
         <MapView style={{ flex: 1 }} />
-        <FloatingActionButton />
+        <FloatingActionButton onPress={() => this.props.navigation.navigate('NewEvent')}/>
       </View>
     )
   }
 
 }
 
-const FloatingActionButton = () => (
-  <TouchableOpacity style={styles.fab}>
-    <Text style={{ fontSize: 20, color: 'white' }}>+</Text>
-  </TouchableOpacity>
-)
+interface FloatingActionButtonProps {
+  onPress: () => void
+}
+
+class FloatingActionButton extends React.Component<FloatingActionButtonProps> {
+
+  render() {
+    return (
+      <TouchableOpacity style={styles.fab} onPress={this.props.onPress}>
+        <Text style={{ fontSize: 20, color: 'white' }}>+</Text>
+      </TouchableOpacity>
+    )
+  }
+
+}
 
 const styles = StyleSheet.create({
   container: {
